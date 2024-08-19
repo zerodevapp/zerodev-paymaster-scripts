@@ -1,0 +1,19 @@
+{
+  "name": "zerodev-paymaster-scripts",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "check-balance": "bun run index.ts --check-balance",
+    "deposit": "bun run index.ts --deposit"
+  },
+  "devDependencies": {
+    "@types/bun": "latest"
+  },
+  "peerDependencies": {
+    "typescript": "^5.0.0"
+  },
+  "dependencies": {
+    "permissionless": "^0.1.44",
+    "viem": "^2.19.7"
+  }
+}
