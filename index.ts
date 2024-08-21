@@ -17,7 +17,7 @@ import {
 /**
  * @dev Edit these values
  */
-const CHAIN = sepolia; // Edit this value to the chain you want to use
+const CHAIN = sepolia; // Your Conduit chain is likely not available in viem/chains. You will need to define it yourself. Check this link: https://viem.sh/docs/chains/introduction#custom-chains
 const DEPOSIT_AMOUNT = parseEther('1'); // Edit this value to the amount you want to deposit
 const ENTRYPOINT: string = ENTRYPOINT_ADDRESS_V07; // or ENTRYPOINT_ADDRESS_V06
 
