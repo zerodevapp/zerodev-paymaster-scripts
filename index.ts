@@ -1,4 +1,3 @@
-import { ENTRYPOINT_ADDRESS_V06, ENTRYPOINT_ADDRESS_V07 } from 'permissionless';
 import {
     createWalletClient,
     formatEther,
@@ -14,12 +13,17 @@ import {
     VERIFYING_PAYMASTER_V07_ABI,
 } from './abi';
 
+enum PAYMASTER_VERSION {
+    V06 = 'V06',
+    V07 = 'V07',
+}
+
 /**
  * @dev Edit these values
  */
 const CHAIN = sepolia; // Your Conduit chain is likely not available in viem/chains. You will need to define it yourself. Check this link: https://viem.sh/docs/chains/introduction#custom-chains
 const DEPOSIT_AMOUNT = parseEther('1'); // Edit this value to the amount you want to deposit
-const ENTRYPOINT: string = ENTRYPOINT_ADDRESS_V07; // or ENTRYPOINT_ADDRESS_V06
+const VERSION: PAYMASTER_VERSION = PAYMASTER_VERSION.V07 as PAYMASTER_VERSION; // Edit this value to the version you want to use
 
 /**
  * @notice VERIFYING_PAYMASTER_ADDRESSES
@@ -46,7 +50,7 @@ const walletClient = createWalletClient({
 });
 
 const checkBalance = async () => {
-    if (ENTRYPOINT === ENTRYPOINT_ADDRESS_V06) {
+    if (VERSION === PAYMASTER_VERSION.V06) {
         const verifyingPaymasterV06 = await getContract({
             address: VERIFYING_PAYMASTER_V06_ADDRESS,
             abi: VERIFYING_PAYMASTER_V06_ABI,
@@ -75,7 +79,7 @@ const checkBalance = async () => {
 };
 
 const deposit = async () => {
-    if (ENTRYPOINT === ENTRYPOINT_ADDRESS_V06) {
+    if (VERSION === PAYMASTER_VERSION.V06) {
         const verifyingPaymasterV06 = await getContract({
             address: VERIFYING_PAYMASTER_V06_ADDRESS,
             abi: VERIFYING_PAYMASTER_V06_ABI,
