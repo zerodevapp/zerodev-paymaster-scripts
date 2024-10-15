@@ -8,7 +8,7 @@ To install dependencies:
 bun install
 ```
 
-Note that you need to configure `CHAIN`, `DEPOSIT_AMOUNT`, and `ENTRYPOINT` in `index.ts` before running the scripts.
+Note that you need to configure `CHAIN`, `DEPOSIT_AMOUNT`, and `VERSION` in `index.ts` before running the scripts.
 
 To check the balance:
 
