@@ -2,6 +2,8 @@
 
 This script is used to check the balance and deposit to the zerodev paymaster contract on [Conduit](https://www.conduit.xyz/) rollup chains.
 
+You will need to [install bun](https://bun.sh/docs/installation) to begin with. 
+
 To install dependencies:
 
 ```bash
